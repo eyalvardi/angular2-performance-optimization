@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular 1 - Board</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        .counter{
+            display: block;
+            width: 50px; height: 50px;
+            border: 1px dotted black;
+            text-align: center;
+            vertical-align: middle;
+            margin: 8px;
+        }
+        .flow{ float:left; }
+    </style>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script>
+        System.config({
+            paths: {
+                // paths serve as alias
+                'npm:': 'node_modules/'
+            },
+            map: {
+                // our app is within the app folder
+                app: 'ng1',
+                angular: 'npm:angular'
+            },
+            packages: {
+                app: {
+                    main: './app.module.js',
+                    defaultExtension: 'js'
+                },
+                angular:{
+                    main: './angular.min.js',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('app');
+    </script>
+</head>
+<body>
+<board></board>
+</body>
+</html>

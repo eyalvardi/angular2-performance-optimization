@@ -1,0 +1,38 @@
+ <html>
+<head>
+    <title>ng-course demos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        :host{ display: block; }
+        .active{ background-color: yellow;}
+        /* Chrome, Safari, Opera */
+        @-webkit-keyframes tick {
+            from {border:1px solid red;}
+            to {border:1px solid white;}
+        }
+
+        /* Standard syntax */
+        @keyframes tick {
+            from {border:1px solid red;}
+            to {border:1px solid white;}
+        }
+    </style>
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.min.js"></script>
+    <!--<script src="node_modules/reflect-metadata/Reflect.js"></script>-->
+
+    <!--<script src="dist/require.js"></script>-->
+
+</head>
+<!-- 3. Display the application -->
+<body>
+
+<my-app>Loading...</my-app>
+<script src="dist/build.js"></script>
+<!--<script src="dist/cd-demos.js"></script>-->
+</body>
+</html>

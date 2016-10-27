@@ -1,0 +1,1 @@
+node_modules/.bin/source-map-explorer dist/build.js

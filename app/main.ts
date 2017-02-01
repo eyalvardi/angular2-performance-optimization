@@ -7,7 +7,7 @@ enableProdMode();
 
 // JIT
 platformBrowserDynamic()
-    .bootstrapModule(AppModule)
+    .bootstrapModule(AppModule);
     /*.then(moduleRef=>{
         const appRef = moduleRef.injector.get(ApplicationRef);
         const cmpRef = appRef.components[0];

@@ -20,5 +20,6 @@ exports.counterComponent = {
         value: '<'
     },
     controller: CounterController,
-    template: "\n    <div class=\"counter\">\n        {{$ctrl.value}}\n    </div>\n" };
+    template: "\n    <div class=\"counter\">\n        {{$ctrl.value}}\n    </div>\n"
+};
 //# sourceMappingURL=counter.component.js.map

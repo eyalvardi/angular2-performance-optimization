@@ -3,7 +3,7 @@ import {BaseComponent} from "../base.component";
 
 @Component({
     selector:'user-profile',
-    changeDetection : ChangeDetectionStrategy.OnPush,
+    //changeDetection : ChangeDetectionStrategy.OnPush,
     styles:[`
         :host{
             display: block;
@@ -53,7 +53,8 @@ import {BaseComponent} from "../base.component";
 export class UserComponent extends BaseComponent{
     @Input('source')user:any;
 
-    tags:string[] = ['HTML5/CSS3','jQuery','CakePHP','Android','AngularJS'];
+    tags:string[];
+    //tags:string[] = ['HTML5/CSS3','jQuery','CakePHP','Android','AngularJS'];
 
     _isDetach:boolean;
     @Input()
@@ -63,8 +64,4 @@ export class UserComponent extends BaseComponent{
     }
     get isDetach(){return this._isDetach;}
 
-    constructor(elmRef: ElementRef, render: Renderer,
-                zone: NgZone, cd: ChangeDetectorRef) {
-        super(elmRef, render, zone,cd);
-    }
 }

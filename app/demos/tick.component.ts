@@ -39,7 +39,6 @@ export class TickComponent {
     boxElemRef:ElementRef;
 
     constructor(
-        protected elmRef:ElementRef,
         protected render:Renderer,
         protected zone:NgZone,
         protected cd: ChangeDetectorRef
@@ -58,7 +57,10 @@ export class TickComponent {
     // tick
     ngDoCheck(){
         this.countTick();
+        this.updateBackgroundColor();
+    }
 
+    updateBackgroundColor(){
         if(!this.isDisplay) return;
 
         this.render.setElementStyle(
@@ -67,6 +69,9 @@ export class TickComponent {
             'red'
         );
 
+        this.clearBackgroundColor();
+    }
+    clearBackgroundColor(){
         this.zone.runOutsideAngular(()=>{
             setTimeout(()=>{
                 this.render.setElementStyle(
@@ -82,6 +87,7 @@ export class TickComponent {
         clearTimeout(this.cancelId);
         let now = +new Date();
         let time = now - +this.start;
+
         if(time > 1000){
             this.oldValue = this.value;
             this.value = 0;

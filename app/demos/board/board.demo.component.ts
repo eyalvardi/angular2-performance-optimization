@@ -55,15 +55,6 @@ export class BoardDemoComponent extends BaseComponent {
     isDetectChanges:boolean  = false;
     isBufferTime:boolean     = false;
 
-
-
-    constructor(elmRef: ElementRef,
-                render: Renderer,
-                zone: NgZone,
-                cd: ChangeDetectorRef) {
-        super(elmRef, render, zone, cd);
-    }
-
     addCounter(value:number){
         this.counters = new Array(value);
     }

@@ -50,16 +50,18 @@ export class CounterComponent extends BaseComponent{
         this.start();
     }
     get isTick(){return this._isTick;}
+/*
 
     constructor( elmRef:ElementRef, render:Renderer,
                  zone:NgZone, cd :ChangeDetectorRef,
                  protected appRef : ApplicationRef ){
         super(elmRef,render,zone,cd);
-        this.runFnBind = this.run.bind(this);
     }
+*/
 
     start(){
         //console.time('counter');
+        this.runFnBind = this.run.bind(this);
         this.stop();
         this._isRun = true;
         this.isTick ? this.run()

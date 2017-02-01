@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 
+
 @Component({
   template: `
     <div>
@@ -8,7 +9,7 @@ import {Component} from "@angular/core";
                 <img src="images/ng-course.png" width="500">
             </a>
             <br>
-           <h3>Angular 2 - Performance Optimization</h3>
+           <h3>Performance Optimization in Angular (<a href="https://eyalvardi.wordpress.com/2016/12/20/performance-optimization-in-angular-2-0/" target="_blank">post</a>)</h3>
            <!--<button (click)="show=1">1 counter</button>
            <button (click)="show=2">n x counter</button>
            <button (click)="show=3">3n x counter</button>

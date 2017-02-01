@@ -45,7 +45,7 @@ import {BaseComponent} from "../base.component";
       </counter2>
 </div>
 `})
-export class BoardDemo2Component extends BaseComponent  implements OnDestroy{
+export class BoardDemo2Component extends BaseComponent implements OnDestroy{
     counters = new Array(100);
     id:any;
     value: number = 0;
@@ -59,12 +59,13 @@ export class BoardDemo2Component extends BaseComponent  implements OnDestroy{
     }
     get isTick(){return this._isTick;}
 
-
-    constructor(elmRef: ElementRef, render: Renderer,
-                zone: NgZone, cd: ChangeDetectorRef,
-                appRef : ApplicationRef) {
-        super(elmRef, render, zone,cd);
-    }
+    constructor(
+        protected elmRef : ElementRef,
+        protected render : Renderer,
+        protected zone   : NgZone,
+        protected cd?    : ChangeDetectorRef,
+        protected appRef?: ApplicationRef
+    ){ super(elmRef,render,zone,cd,appRef);}
 
     ngOnInit(){
         //console.time('counter');

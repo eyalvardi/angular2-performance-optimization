@@ -1,13 +1,15 @@
-import {NgModule} from "@angular/core";
-import {BrowserModule} from "@angular/platform-browser";
-import {HttpModule} from "@angular/http";
-import {RouterModule} from "@angular/router";
-import {appRoutes} from "./app.routes";
-import {AppComponent} from "./app.component";
-import {DemosModule} from './demos/demos.module';
+import {NgModule}       from "@angular/core";
+import {BrowserModule}  from "@angular/platform-browser";
+import {HttpModule}     from "@angular/http";
+import {RouterModule}   from "@angular/router";
+import {appRoutes}      from "./app.routes";
+import {AppComponent}   from "./app.component";
+import {DemosModule}    from './demos/demos.module';
+import {BaseComponent} from "./demos/base.component";
 
 @NgModule({
-    declarations:[AppComponent],
+    declarations:[AppComponent,BaseComponent],
+    entryComponents:[],
     bootstrap   :[AppComponent],
     imports     :[
         BrowserModule,
@@ -20,9 +22,7 @@ import {DemosModule} from './demos/demos.module';
     providers   :[
         //UpdateService
         /*,{provide: ApplicationRef, useClass: ApplicationRefDebugMode}*/
-
-        ],
-    exports     :[]
+        ]
 })
 export class AppModule{
     /* constructor(private appRef:ApplicationRef){

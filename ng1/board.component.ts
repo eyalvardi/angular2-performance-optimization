@@ -46,6 +46,7 @@ export const boardComponent = {
         <a ng-click="$ctrl.addCounter(1500)">1,500</a> |
         <a ng-click="$ctrl.addCounter(3000)">3,000</a> |
         <a ng-click="$ctrl.addCounter(5000)">5,000</a> |
+        <a ng-click="$ctrl.addCounter(7000)">7,000</a> |
       
       <hr>
       <counter class="flow"

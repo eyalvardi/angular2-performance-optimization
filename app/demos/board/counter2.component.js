@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -13,26 +12,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var base_component_1 = require("../base.component");
+import { Component, Input } from '@angular/core';
+import { BaseComponent } from "../base.component";
 var Counter2Component = (function (_super) {
     __extends(Counter2Component, _super);
-    function Counter2Component(elmRef, render, zone, cd, appRef) {
-        _super.call(this, elmRef, render, zone, cd);
-        this.appRef = appRef;
+    function Counter2Component() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], Counter2Component.prototype, "value", void 0);
-    Counter2Component = __decorate([
-        core_1.Component({
-            selector: 'counter2',
-            styles: ["\n        :host{\n                display: block;\n                width: 50px; height: 50px;\n                border: 1px dotted black;\n                text-align: center;\n                vertical-align: middle;\n                margin: 8px;\n                            \n        }\n    "],
-            template: "\n    <div>{{value}}</div>\n" }), 
-        __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer, core_1.NgZone, core_1.ChangeDetectorRef, core_1.ApplicationRef])
-    ], Counter2Component);
     return Counter2Component;
-}(base_component_1.BaseComponent));
-exports.Counter2Component = Counter2Component;
+}(BaseComponent));
+__decorate([
+    Input(),
+    __metadata("design:type", Number)
+], Counter2Component.prototype, "value", void 0);
+Counter2Component = __decorate([
+    Component({
+        selector: 'counter2',
+        styles: ["\n        :host{\n                display: block;\n                width: 50px; height: 50px;\n                border: 1px dotted black;\n                text-align: center;\n                vertical-align: middle;\n                margin: 8px;\n                            \n        }\n    "],
+        template: "\n    <div>{{value}}</div>\n"
+    })
+], Counter2Component);
+export { Counter2Component };
 //# sourceMappingURL=counter2.component.js.map

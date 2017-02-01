@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -13,15 +12,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var base_component_1 = require("../base.component");
+import { Component, Input, ApplicationRef, ChangeDetectorRef, NgZone, Renderer, ElementRef } from "@angular/core";
+import { BaseComponent } from "../base.component";
 var ItemComponent = (function (_super) {
     __extends(ItemComponent, _super);
     function ItemComponent(elmRef, render, zone, cd, appRef) {
-        _super.call(this, elmRef, render, zone);
-        this.cd = cd;
-        this.appRef = appRef;
-        this.isActive = false;
+        var _this = _super.call(this, elmRef, render, zone) || this;
+        _this.cd = cd;
+        _this.appRef = appRef;
+        _this.isActive = false;
+        return _this;
     }
     Object.defineProperty(ItemComponent.prototype, "title", {
         get: function () { return this._title; },
@@ -29,20 +29,25 @@ var ItemComponent = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object), 
-        __metadata('design:paramtypes', [Object])
-    ], ItemComponent.prototype, "title", null);
-    ItemComponent = __decorate([
-        core_1.Component({
-            selector: 'item',
-            providers: [],
-            styles: ["\n        :host{ display: block; }\n"],
-            template: "\n<div class=\"panel panel-default\">\n    <div (click)=\"isActive = !isActive\" class=\"panel-heading\">\n        <h4 class=\"panel-title\">\n            {{title}}\n        </h4>\n    </div>\n    <div *ngIf=\"isActive\">\n        <div class=\"panel-body\">\n            <ng-content></ng-content>\n        </div>\n    </div>\n</div>\n" }), 
-        __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer, core_1.NgZone, core_1.ChangeDetectorRef, core_1.ApplicationRef])
-    ], ItemComponent);
     return ItemComponent;
-}(base_component_1.BaseComponent));
-exports.ItemComponent = ItemComponent;
+}(BaseComponent));
+__decorate([
+    Input(),
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [Object])
+], ItemComponent.prototype, "title", null);
+ItemComponent = __decorate([
+    Component({
+        selector: 'item',
+        providers: [],
+        styles: ["\n        :host{ display: block; }\n"],
+        template: "\n<div class=\"panel panel-default\">\n    <div (click)=\"isActive = !isActive\" class=\"panel-heading\">\n        <h4 class=\"panel-title\">\n            {{title}}\n        </h4>\n    </div>\n    <div *ngIf=\"isActive\">\n        <div class=\"panel-body\">\n            <ng-content></ng-content>\n        </div>\n    </div>\n</div>\n"
+    }),
+    __metadata("design:paramtypes", [ElementRef,
+        Renderer,
+        NgZone,
+        ChangeDetectorRef,
+        ApplicationRef])
+], ItemComponent);
+export { ItemComponent };
 //# sourceMappingURL=item.component.js.map

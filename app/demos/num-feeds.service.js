@@ -3,7 +3,6 @@
  */
 var isStart = false;
 var id;
-var pMessage = self.postMessage.bind(self);
 self.addEventListener('message', function (e) {
     if (e.data) {
         isStart = true;
@@ -22,7 +21,8 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 function run() {
-    pMessage(getRandomIntInclusive());
+    //pMessage(getRandomIntInclusive());
+    self.postMessage(getRandomIntInclusive());
     if (isStart) {
         id = setTimeout(run, 10);
     }

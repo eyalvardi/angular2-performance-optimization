@@ -16,6 +16,7 @@ import {Counter2Component} from "./board/counter2.component";
 import {UserComponent} from "./detach/user.component";
 import {UsersDemoComponent} from "./detach/users-demo.component";
 import {OnDirtyDemoComponent} from "./on-dirty/on-dirty.component";
+import {UpDownComponent} from "./on-dirty/up-down.component";
 
 let demosComponent = [
     TickComponent
@@ -32,10 +33,12 @@ let demosComponent = [
     ,UserComponent
     ,UsersDemoComponent
     ,OnDirtyDemoComponent
+    ,UpDownComponent
 ];
 
 @NgModule({
     declarations:[demosComponent],
+    //entryComponents:[BaseComponent],
     imports     :[CommonModule],
     exports     :[demosComponent]
 })

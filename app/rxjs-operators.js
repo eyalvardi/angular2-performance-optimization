@@ -1,15 +1,14 @@
-"use strict";
-require('rxjs/add/operator/bufferTime');
-require('rxjs/add/operator/bufferCount');
-require('rxjs/add/operator/filter');
-require('rxjs/add/operator/do');
-require('rxjs/add/operator/debounceTime');
-require('rxjs/add/operator/pairwise');
-require('rxjs/add/operator/throttleTime');
-require('rxjs/add/operator/sampleTime');
-require('rxjs/add/operator/auditTime');
-require('rxjs/add/operator/distinctUntilChanged');
-require('rxjs/add/operator/scan');
-require('rxjs/add/operator/share');
-require('rxjs/add/operator/map');
+import 'rxjs/add/operator/bufferTime';
+import 'rxjs/add/operator/bufferCount';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/pairwise';
+import 'rxjs/add/operator/throttleTime';
+import 'rxjs/add/operator/sampleTime';
+import 'rxjs/add/operator/auditTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/scan';
+import 'rxjs/add/operator/share';
+import 'rxjs/add/operator/map';
 //# sourceMappingURL=rxjs-operators.js.map

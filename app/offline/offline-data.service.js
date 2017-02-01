@@ -1,5 +1,5 @@
 "use strict";
-var _1000_users_1 = require('./1000-users');
+var _1000_users_1 = require("./1000-users");
 var InMemoryDataService = (function () {
     function InMemoryDataService() {
     }

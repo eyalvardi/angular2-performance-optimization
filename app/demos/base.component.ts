@@ -1,4 +1,12 @@
-import {ElementRef, Renderer, NgZone, ChangeDetectorRef, ChangeDetectionStrategy,DoCheck} from "@angular/core";
+import {
+    ElementRef,
+    Renderer,
+    NgZone,
+    ChangeDetectorRef,
+    ChangeDetectionStrategy,
+    DoCheck,
+    VERSION, Injectable, ApplicationRef, Component
+} from "@angular/core";
 
 let isBorder = true;
 
@@ -6,6 +14,10 @@ export function setBorder(val:boolean){
     isBorder = val;
 }
 
+@Component({
+    selector: 'base-cmp',
+    template: ``
+})
 export class BaseComponent implements DoCheck{
     //isTick:boolean = false;
     isDetach:boolean = false;
@@ -18,14 +30,19 @@ export class BaseComponent implements DoCheck{
     }
 
     constructor(
-        protected elmRef:ElementRef,
-        protected render:Renderer,
-        protected zone:NgZone,
-        protected cd?:ChangeDetectorRef
-    ){}
+        protected elmRef : ElementRef,
+        protected render : Renderer,
+        protected zone   : NgZone,
+        protected cd?    : ChangeDetectorRef,
+        protected appRef?: ApplicationRef
+    ){
+        //debugger;
+    }
 
 
-
+    get version(){
+            return VERSION.full;
+    }
     get cdMode(){
         //return this.cd['_view'].cdMode;
         return ChangeDetectionStrategy[this.cd['_view'].cdMode];
@@ -34,6 +51,8 @@ export class BaseComponent implements DoCheck{
     // tick
     ngDoCheck(){
         if(!this.isBorder) return;
+        if(!this.render) return;
+
         this.render.setElementStyle(
             this.elmRef.nativeElement,
             'border',

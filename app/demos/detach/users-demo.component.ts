@@ -27,7 +27,7 @@ import '../../rxjs-operators';
         [ngClass]="{'btn-warning': isBorder,'btn-success':!isBorder}">
         <span *ngIf="!isBorder">No</span> Border
       </button>
-       <button (click)="isStart = !isStart" class="btn"
+     <button (click)="isStart = !isStart" class="btn"
         [ngClass]="{'btn-warning': !isStart,'btn-success':isStart}">
         {{ isStart ? 'Start':  'Stop'}}
       </button>
@@ -46,6 +46,7 @@ export class UsersDemoComponent extends BaseComponent  implements OnDestroy{
     value:number = 0;
     id:any;
     isDetach:boolean = false;
+    runFnBind: ()=>void;
 
     _isStart:boolean;
 
@@ -60,12 +61,11 @@ export class UsersDemoComponent extends BaseComponent  implements OnDestroy{
                 zone: NgZone, cd: ChangeDetectorRef,
                 private http:Http) {
         super(elmRef, render, zone,cd);
-
+        this.runFnBind = this.run.bind(this);
     }
-
+    
     load(num=1){
         //this.loadOffline();
-
         this.loadOnLine(num);
     }
     loadOnLine(num){
@@ -88,13 +88,13 @@ export class UsersDemoComponent extends BaseComponent  implements OnDestroy{
     }
     run(){
         this.value++;
-        if( this.value > 60) {
+        if( this.value > 90) {
             console.timeEnd('counter');
             this.value = 0;
             console.time('counter');
         }
         if(this.isStart){
-            this.id = setTimeout(this.run.bind(this),10);
+            this.id = setTimeout(this.runFnBind,10);
         }
     }
 

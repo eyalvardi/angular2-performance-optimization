@@ -28,9 +28,9 @@ import {BaseComponent} from "../base.component";
       <br> 
       <hr>
       <counter #counter
-          [value]="100" 
-          [ms]="10"
-          [isTick]="isTick"
+          [value]          ="100" 
+          [ms]             ="10"
+          [isTick]         ="isTick"
           [isDetectChanges]="isDetectChanges">      
       </counter>
       

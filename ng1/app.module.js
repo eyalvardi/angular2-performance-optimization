@@ -1,6 +1,6 @@
 "use strict";
-require('angular');
-var board_component_1 = require('./board.component');
+require("angular");
+var board_component_1 = require("./board.component");
 var counter_component_1 = require("./counter.component");
 angular.module('app', [])
     .component('counter', counter_component_1.counterComponent)

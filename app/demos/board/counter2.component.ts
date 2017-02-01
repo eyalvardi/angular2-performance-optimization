@@ -1,6 +1,7 @@
 import {Component, ElementRef, Renderer, NgZone, ChangeDetectorRef, ApplicationRef, Input} from '@angular/core';
 import {BaseComponent} from "../base.component";
 
+
 @Component({
     selector    : 'counter2',
     styles : [`
@@ -21,15 +22,4 @@ export class Counter2Component extends BaseComponent{
 
     @Input()
     value:number;
-
-    constructor(
-        elmRef:ElementRef,
-        render:Renderer,
-        zone:NgZone,
-        cd :ChangeDetectorRef,
-        protected appRef : ApplicationRef
-
-    ){
-        super(elmRef,render,zone,cd);
-    }
 }

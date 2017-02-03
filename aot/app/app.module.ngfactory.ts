@@ -95,7 +95,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
   __HAMMER_GESTURE_CONFIG_18:import13.HammerGestureConfig;
   __EVENT_MANAGER_PLUGINS_19:any[];
   __EventManager_20:import14.EventManager;
-  __DomSharedStylesHost_21:import15.DomSharedStylesHost;
+  _DomSharedStylesHost_21:import15.DomSharedStylesHost;
   __AnimationDriver_22:any;
   __DomRootRenderer_23:import16.DomRootRenderer_;
   __NgProbeToken_24:any[];
@@ -181,10 +181,6 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
   get _EventManager_20():import14.EventManager {
     if ((this.__EventManager_20 == null)) { (this.__EventManager_20 = new import14.EventManager(this._EVENT_MANAGER_PLUGINS_19,this.parent.get(import42.NgZone))); }
     return this.__EventManager_20;
-  }
-  get _DomSharedStylesHost_21():import15.DomSharedStylesHost {
-    if ((this.__DomSharedStylesHost_21 == null)) { (this.__DomSharedStylesHost_21 = new import15.DomSharedStylesHost(this._DOCUMENT_17)); }
-    return this.__DomSharedStylesHost_21;
   }
   get _AnimationDriver_22():any {
     if ((this.__AnimationDriver_22 == null)) { (this.__AnimationDriver_22 = import4._resolveDefaultAnimationDriver()); }
@@ -357,6 +353,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
     this._ApplicationInitStatus_11 = new import9.ApplicationInitStatus(this.parent.get(import9.APP_INITIALIZER,(null as any)));
     this._Testability_12 = new import10.Testability(this.parent.get(import42.NgZone));
     this._ApplicationRef__13 = new import11.ApplicationRef_(this.parent.get(import42.NgZone),this.parent.get(import55.Console),this,this._ErrorHandler_10,this,this._ApplicationInitStatus_11,this.parent.get(import10.TestabilityRegistry,(null as any)),this._Testability_12);
+    this._DomSharedStylesHost_21 = new import15.DomSharedStylesHost(this._DOCUMENT_17);
     this._NoPreloading_49 = new import29.NoPreloading();
     this._PreloadingStrategy_50 = this._NoPreloading_49;
     this._RouterPreloader_51 = new import29.RouterPreloader(this._Router_47,this._NgModuleFactoryLoader_45,this._Compiler_15,this,this._PreloadingStrategy_50);
@@ -422,6 +419,7 @@ class AppModuleInjector extends import0.NgModuleInjector<import1.AppModule> {
   }
   destroyInternal():void {
     this._ApplicationRef__13.ngOnDestroy();
+    this._DomSharedStylesHost_21.ngOnDestroy();
     this._RouterPreloader_51.ngOnDestroy();
   }
 }

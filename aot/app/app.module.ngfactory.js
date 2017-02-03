@@ -183,16 +183,6 @@ var AppModuleInjector = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(AppModuleInjector.prototype, "_DomSharedStylesHost_21", {
-        get: function () {
-            if ((this.__DomSharedStylesHost_21 == null)) {
-                (this.__DomSharedStylesHost_21 = new import15.DomSharedStylesHost(this._DOCUMENT_17));
-            }
-            return this.__DomSharedStylesHost_21;
-        },
-        enumerable: true,
-        configurable: true
-    });
     Object.defineProperty(AppModuleInjector.prototype, "_AnimationDriver_22", {
         get: function () {
             if ((this.__AnimationDriver_22 == null)) {
@@ -537,6 +527,7 @@ var AppModuleInjector = (function (_super) {
         this._ApplicationInitStatus_11 = new import9.ApplicationInitStatus(this.parent.get(import9.APP_INITIALIZER, null));
         this._Testability_12 = new import10.Testability(this.parent.get(import42.NgZone));
         this._ApplicationRef__13 = new import11.ApplicationRef_(this.parent.get(import42.NgZone), this.parent.get(import55.Console), this, this._ErrorHandler_10, this, this._ApplicationInitStatus_11, this.parent.get(import10.TestabilityRegistry, null), this._Testability_12);
+        this._DomSharedStylesHost_21 = new import15.DomSharedStylesHost(this._DOCUMENT_17);
         this._NoPreloading_49 = new import29.NoPreloading();
         this._PreloadingStrategy_50 = this._NoPreloading_49;
         this._RouterPreloader_51 = new import29.RouterPreloader(this._Router_47, this._NgModuleFactoryLoader_45, this._Compiler_15, this, this._PreloadingStrategy_50);
@@ -712,6 +703,7 @@ var AppModuleInjector = (function (_super) {
     };
     AppModuleInjector.prototype.destroyInternal = function () {
         this._ApplicationRef__13.ngOnDestroy();
+        this._DomSharedStylesHost_21.ngOnDestroy();
         this._RouterPreloader_51.ngOnDestroy();
     };
     return AppModuleInjector;

@@ -1,3 +1,0 @@
-export var threshold = "\n    let threshold = source\n          .auditTime(500)\n          .scan((acc,curr)=>{\n                return {\n                    curr,\n                    delta: Math.abs(acc.curr - curr)\n                }\n           })\n          .filter(value => value.delta > 15)\n          .map(acc => acc.curr)\n          .distinctUntilChanged();\n    ";
-export var upDown = "\n    threshold\n        .scan((acc,curr)=>{\n             return {\n                        curr,\n                        isUp: curr - acc.curr > 0\n             }\n        })\n        .map(val => val.isUp)\n        .distinctUntilChanged();\n    ";
-//# sourceMappingURL=codes.snipets.js.map

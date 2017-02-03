@@ -8,7 +8,9 @@
         "experimentalDecorators": true,
         "lib": ["es2015", "dom"],
         "noImplicitAny": false,
-        "suppressImplicitAnyIndexErrors": false
+        "suppressImplicitAnyIndexErrors": false,
+        "baseUrl": "./",
+        "outDir": "dist/tsc-out"
 },
 
     "files": [

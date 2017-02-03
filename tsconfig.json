@@ -9,7 +9,9 @@
     "removeComments": false,
     "noImplicitAny": false,
     "suppressImplicitAnyIndexErrors": true,
-    "types": []
+    "types": [],
+    "baseUrl": "./",
+    "outDir": "dist/tsc-out"
   },
   "exclude": [
     "node_modules/*",

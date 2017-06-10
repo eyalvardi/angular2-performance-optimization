@@ -41,7 +41,8 @@ import {BaseComponent} from "../base.component";
       <hr>
       <counter2 class="flow"
         *ngFor="let c of counters;let index=index"       
-        [value]="value + index">    
+        >
+          <!--[value]="value + index">-->
       </counter2>
 </div>
 `})
@@ -59,13 +60,13 @@ export class BoardDemo2Component extends BaseComponent implements OnDestroy{
     }
     get isTick(){return this._isTick;}
 
-    constructor(
+    /*constructor(
         protected elmRef : ElementRef,
         protected render : Renderer,
         protected zone   : NgZone,
         protected cd?    : ChangeDetectorRef,
         protected appRef?: ApplicationRef
-    ){ super(elmRef,render,zone,cd,appRef);}
+    ){ super(elmRef,render,zone,cd,appRef);}*/
 
     ngOnInit(){
         //console.time('counter');

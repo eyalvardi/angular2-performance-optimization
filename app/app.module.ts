@@ -5,11 +5,15 @@ import {RouterModule}   from "@angular/router";
 import {appRoutes}      from "./app.routes";
 import {AppComponent}   from "./app.component";
 import {DemosModule}    from './demos/demos.module';
-import {BaseComponent} from "./demos/base.component";
 
 @NgModule({
-    declarations:[AppComponent,BaseComponent],
-    entryComponents:[],
+    declarations:[
+        AppComponent,
+        //BaseComponent
+    ],
+    entryComponents:[
+        //BaseComponent
+    ],
     bootstrap   :[AppComponent],
     imports     :[
         BrowserModule,

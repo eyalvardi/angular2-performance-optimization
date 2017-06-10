@@ -1,4 +1,7 @@
-import {Component, Input, ApplicationRef, ChangeDetectorRef, NgZone, Renderer, ElementRef} from "@angular/core";
+import {
+    Component, Input, ApplicationRef, ChangeDetectorRef, NgZone, Renderer, ElementRef,
+    Renderer2
+} from "@angular/core";
 import {BaseComponent} from "../base.component";
 
 @Component({
@@ -30,15 +33,15 @@ export class ItemComponent extends BaseComponent{
 
     isActive:boolean = false;
 
-    constructor(
+    /*constructor(
         elmRef:ElementRef,
-        render:Renderer,
+        render:Renderer2,
         zone:NgZone,
         protected cd :ChangeDetectorRef,
         protected appRef : ApplicationRef
 
     ){
         super(elmRef,render,zone);
-    }
+    }*/
 
 }

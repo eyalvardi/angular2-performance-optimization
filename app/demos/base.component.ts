@@ -1,11 +1,10 @@
 import {
     ElementRef,
-    Renderer,
     NgZone,
     ChangeDetectorRef,
     ChangeDetectionStrategy,
     DoCheck,
-    VERSION, Injectable, ApplicationRef, Component
+    VERSION, Injectable, ApplicationRef, Component, Renderer2
 } from "@angular/core";
 
 let isBorder = true;
@@ -15,12 +14,33 @@ export function setBorder(val:boolean){
 }
 
 @Component({
-    selector: 'base-cmp',
-    template: ``
+    selector: 'base',
+    styles: [],
+    template: `
+<div>
+  
+</div>
+`
 })
 export class BaseComponent implements DoCheck{
     //isTick:boolean = false;
-    isDetach:boolean = false;
+   /* public isDetach:boolean = false;*/
+
+    _isDetach:boolean = false;
+    /*@Input()*/
+    set isDetach(value){
+        if(value){
+            this.cd.detach();
+        }else{
+            this.cd.reattach();
+        }
+        this._isDetach = value;
+    }
+    get isDetach(){
+        return this._isDetach;
+    }
+
+
 
     set isBorder(value:boolean) {
         isBorder = value;
@@ -29,13 +49,11 @@ export class BaseComponent implements DoCheck{
         return isBorder;
     }
 
-    constructor(
-        protected elmRef : ElementRef,
-        protected render : Renderer,
-        protected zone   : NgZone,
-        protected cd?    : ChangeDetectorRef,
-        protected appRef?: ApplicationRef
-    ){
+    constructor( protected elmRef : ElementRef,
+                 protected render : Renderer2,
+                 protected zone   : NgZone,
+                 protected cd?    : ChangeDetectorRef,
+                 protected appRef?: ApplicationRef) {
         //debugger;
     }
 
@@ -53,7 +71,7 @@ export class BaseComponent implements DoCheck{
         if(!this.isBorder) return;
         if(!this.render) return;
 
-        this.render.setElementStyle(
+        this.render.setStyle(
             this.elmRef.nativeElement,
             'border',
             '1px solid red'
@@ -63,7 +81,7 @@ export class BaseComponent implements DoCheck{
 
         this.zone.runOutsideAngular(()=>{
             setTimeout(()=>{
-                this.render.setElementStyle(
+                this.render.setStyle(
                     this.elmRef.nativeElement,
                     'border',
                     '1px solid white'

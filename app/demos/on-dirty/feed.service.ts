@@ -2,10 +2,11 @@ import {Observable} from "rxjs/Observable";
 import {Observer}   from "rxjs/Observer";
 
 export class FeedService{
-    worker:any;
-    observer:Observer<number>;
-    source:Observable<number>;
-    updateFn:any;
+    private worker:any;
+    private observer:Observer<number>;
+    private updateFn:any;
+
+    public source:Observable<number>;
 
     constructor(){
         this.source = Observable.create((observer)=>{ this.observer = observer; }).share();
@@ -14,7 +15,7 @@ export class FeedService{
 
     start(){
         // create producer
-        this.worker = new Worker('app/demos/num-feeds.service.js');
+        this.worker = new Worker('dist/tsc-out/app/demos/num-feeds.service.js');
         this.worker.addEventListener('message',this.updateFn);
         this.worker.postMessage(true);
     }

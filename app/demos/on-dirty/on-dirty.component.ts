@@ -74,13 +74,13 @@ export class OnDirtyDemoComponent extends BaseComponent {
     }
     get thresholdFeed(){
         return this.auditTimeFeed
-            .scan((acc:{curr:number,delta:number},curr)=>{
+            .scan((acc:any,curr)=>{
+                let delta = Math.abs(acc.value - curr);
                 return {
-                    curr,
-                    delta: Math.abs(acc.curr - curr)
+                    delta: delta,
+                    value: delta > 15 ? curr : acc.value
                 }
             })
-            .filter(value => value.delta > 15)
-            .map(acc => acc.curr);
+            .map(acc => acc.value);
     }
 }

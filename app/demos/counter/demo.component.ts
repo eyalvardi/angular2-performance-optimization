@@ -1,7 +1,7 @@
 import {
     Component,
     ElementRef,
-    Renderer,
+    Renderer2,
     NgZone,
     ChangeDetectorRef
 } from '@angular/core';
@@ -43,7 +43,7 @@ export class CounterDemoComponent extends BaseComponent{
 
     constructor(
         elmRef: ElementRef,
-        render: Renderer,
+        render: Renderer2,
         zone  : NgZone,
         cd    : ChangeDetectorRef
     ){

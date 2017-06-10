@@ -46,7 +46,7 @@ export class Item2Component extends BaseComponent{
 
     isActive:boolean = false;
 
-    constructor(
+    /*constructor(
         elmRef:ElementRef,
         render:Renderer,
         zone:NgZone,
@@ -55,6 +55,6 @@ export class Item2Component extends BaseComponent{
 
     ){
         super(elmRef,render,zone);
-    }
+    }*/
 
 }

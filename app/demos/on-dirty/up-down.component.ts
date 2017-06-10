@@ -26,6 +26,11 @@ import {Observable}  from "rxjs/Observable";
 `],
     template: `
     <pre>{{val}} : <span [class.trg-up]="isUp" [class.trg-down]="!isUp"></span></pre>
+    
+    <!--<pre *ngIf="(lastObservable$ | async) as data; else loading">
+        {{data.curr}} : <span [class.trg-up]="data.isUp" [class.trg-down]="!data.isUp"></span>
+    </pre>  
+    <ng-template #loading>loading...</ng-template>    -->
 `})
 export class UpDownComponent {
     val         :number = 0;
@@ -34,11 +39,17 @@ export class UpDownComponent {
 
     @Input() source:Observable<number>;
 
+    lastObservable$:Observable<{curr:number,isUp:boolean}>
+
     constructor(private zone: NgZone,
                 private cd: ChangeDetectorRef) {
     }
 
     ngOnInit(){
+        // Option I
+        //this.buildPipe();
+
+        // option II
         this.subscriber = this
             .source
             .do(num => { this.val = num; })
@@ -55,6 +66,20 @@ export class UpDownComponent {
                 this.isUp = val;
                 this.cd.detectChanges();
             });
+    }
+
+    buildPipe(){
+        this.lastObservable$ =
+                this.source
+               // .do(item=>{console.log(item)})
+                .scan((acc:{curr:number,isUp:boolean},curr)=>{
+                    return {
+                        curr,
+                        isUp: curr - acc.curr > 0
+                    }
+                })
+                .distinctUntilChanged()
+                .do(_=>{this.cd.detectChanges()});
     }
 
     ngOnDestroy(){

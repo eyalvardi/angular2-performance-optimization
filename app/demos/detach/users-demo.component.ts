@@ -1,4 +1,7 @@
-import {Component, ElementRef, Renderer, ChangeDetectorRef, NgZone, OnDestroy,ChangeDetectionStrategy} from "@angular/core";
+import {
+    Component, ElementRef, Renderer, ChangeDetectorRef, NgZone, OnDestroy, ChangeDetectionStrategy,
+    Renderer2
+} from "@angular/core";
 import {Http} from "@angular/http";
 import {BaseComponent} from "../base.component";
 import '../../rxjs-operators';
@@ -45,7 +48,8 @@ export class UsersDemoComponent extends BaseComponent  implements OnDestroy{
     users:any[] = [];
     value:number = 0;
     id:any;
-    isDetach:boolean = false;
+
+
     runFnBind: ()=>void;
 
     _isStart:boolean;
@@ -57,7 +61,7 @@ export class UsersDemoComponent extends BaseComponent  implements OnDestroy{
     get isStart(){return this._isStart;}
 
 
-    constructor(elmRef: ElementRef, render: Renderer,
+    constructor(elmRef: ElementRef, render: Renderer2,
                 zone: NgZone, cd: ChangeDetectorRef,
                 private http:Http) {
         super(elmRef, render, zone,cd);
@@ -88,7 +92,7 @@ export class UsersDemoComponent extends BaseComponent  implements OnDestroy{
     }
     run(){
         this.value++;
-        if( this.value > 90) {
+        if( this.value > 100) {
             console.timeEnd('counter');
             this.value = 0;
             console.time('counter');

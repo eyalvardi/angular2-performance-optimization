@@ -1,4 +1,4 @@
-import {Component, Renderer, ElementRef, NgZone, ChangeDetectorRef, ViewChild} from "@angular/core";
+import {Component, ElementRef, NgZone, ChangeDetectorRef, ViewChild, Renderer2} from "@angular/core";
 import {setBorder} from './base.component';
 
 @Component({
@@ -39,7 +39,7 @@ export class TickComponent {
     boxElemRef:ElementRef;
 
     constructor(
-        protected render:Renderer,
+        protected render:Renderer2,
         protected zone:NgZone,
         protected cd: ChangeDetectorRef
     ){
@@ -63,7 +63,7 @@ export class TickComponent {
     updateBackgroundColor(){
         if(!this.isDisplay) return;
 
-        this.render.setElementStyle(
+        this.render.setStyle(
             this.boxElemRef.nativeElement,
             'background-color',
             'red'
@@ -74,7 +74,7 @@ export class TickComponent {
     clearBackgroundColor(){
         this.zone.runOutsideAngular(()=>{
             setTimeout(()=>{
-                this.render.setElementStyle(
+                this.render.setStyle(
                     this.boxElemRef.nativeElement,
                     'background-color',
                     'white'

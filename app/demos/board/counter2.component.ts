@@ -1,9 +1,13 @@
-import {Component, ElementRef, Renderer, NgZone, ChangeDetectorRef, ApplicationRef, Input} from '@angular/core';
+import {
+    Component, ElementRef, Renderer, NgZone, ChangeDetectorRef, ApplicationRef, Input,
+    ChangeDetectionStrategy
+} from '@angular/core';
 import {BaseComponent} from "../base.component";
 
 
 @Component({
     selector    : 'counter2',
+    //changeDetection: ChangeDetectionStrategy.OnPush,
     styles : [`
         :host{
                 display: block;
@@ -21,5 +25,10 @@ import {BaseComponent} from "../base.component";
 export class Counter2Component extends BaseComponent{
 
     @Input()
-    value:number;
+    value:number = 0;
+
+    ngDoCheck(){
+        super.ngDoCheck();
+        this.value++;
+    }
 }

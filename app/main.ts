@@ -3,13 +3,15 @@ import {enableProdMode, ApplicationRef} from "@angular/core";
 import {enableDebugTools} from "@angular/platform-browser";
 import {AppModule} from "./app.module";
 
-enableProdMode();
+//enableProdMode();
+
+
 
 // JIT
 platformBrowserDynamic()
-    .bootstrapModule(AppModule);
-    /*.then(moduleRef=>{
+    .bootstrapModule(AppModule)
+    .then(moduleRef=>{
         const appRef = moduleRef.injector.get(ApplicationRef);
         const cmpRef = appRef.components[0];
         enableDebugTools(cmpRef);
-    });*/
+    });

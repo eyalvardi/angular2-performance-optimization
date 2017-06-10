@@ -33,3 +33,26 @@ testem.log
 Thumbs.db
 Contact GitHub
 
+app/app.component.js
+app/app.module.js
+app/app.routes.js
+app/codes.snipets.js
+app/demos/accordion/accordion.component.js
+app/demos/accordion/demo.component.js
+app/demos/accordion/item-no-tick.component.js
+app/demos/accordion/item.component.js
+app/demos/base.component.js
+app/demos/board/board.demo.component.js
+app/demos/board/board2.demo.component.js
+app/demos/board/counter2.component.js
+app/demos/counter/counter.component.js
+app/demos/demos.module.js
+app/demos/detach/user.component.js
+app/demos/detach/users-demo.component.js
+app/demos/home.component.js
+app/demos/on-dirty/feed.service.js
+app/demos/on-dirty/on-dirty.component.js
+app/demos/on-dirty/up-down.component.js
+app/demos/tick.component.js
+app/main-aot.js
+app/rxjs-operators.js

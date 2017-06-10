@@ -4,17 +4,18 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata" : true,
     "experimentalDecorators": true,
     "removeComments": false,
-    "noImplicitAny": false,
+    "noImplicitAny" : false,
     "suppressImplicitAnyIndexErrors": true,
     "types": [],
     "baseUrl": "./",
-    "outDir": "dist/tsc-out"
+    "outDir": "dist/tsc-out",
+    "noEmitHelpers": false,
+    "importHelpers": true
   },
   "exclude": [
-    "node_modules/*",
     "aot/*",
     "**/*-aot.ts"
   ]

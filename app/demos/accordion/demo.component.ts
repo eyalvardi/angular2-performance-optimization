@@ -8,7 +8,7 @@ import {Component} from "@angular/core";
     <h4>(click) in the template cause a tick</h4>
     <accordion>        
         <item title="title 1">
-            <template></template>
+            <ng-template></ng-template>
             desc 1
         </item>
         <item title="title 2">desc 2</item>

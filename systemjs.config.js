@@ -25,6 +25,7 @@
 
             // other libraries
             'rxjs': 'npm:rxjs',
+            'tslib':'npm:tslib/tslib.js',
             'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
         },
 

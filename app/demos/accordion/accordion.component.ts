@@ -13,7 +13,7 @@ import {BaseComponent} from "../base.component";
     </div>
 `})
 export class AccordionComponent extends BaseComponent{
-    constructor(
+    /*constructor(
         elmRef:ElementRef,
         render:Renderer,
         zone:NgZone,
@@ -21,5 +21,5 @@ export class AccordionComponent extends BaseComponent{
         protected appRef : ApplicationRef
     ){
         super(elmRef,render,zone);
-    }
+    }*/
 }

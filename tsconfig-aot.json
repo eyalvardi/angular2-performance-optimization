@@ -10,7 +10,8 @@
         "noImplicitAny": false,
         "suppressImplicitAnyIndexErrors": false,
         "baseUrl": "./",
-        "outDir": "dist/tsc-out"
+        "outDir": "dist/tsc-out",
+        "importHelpers": true
 },
 
     "files": [

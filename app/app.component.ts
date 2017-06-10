@@ -1,9 +1,10 @@
 import {Component,ElementRef,Renderer,NgZone,VERSION} from '@angular/core';
 import {BaseComponent} from "./demos/base.component";
-
+let a =2;
 @Component({
     selector    : 'my-app',
     styles : [`:host{display: block}`],
+    //providers:[UserProxy],
     template : `
     <div  class="container-fluid" style="max-width:800px">
          <tick></tick>
@@ -29,11 +30,11 @@ import {BaseComponent} from "./demos/base.component";
     </div>
 `})
 export class AppComponent extends BaseComponent{
-    constructor(
+    /*constructor(
         protected elmRef:ElementRef,
         protected render:Renderer,
         protected zone:NgZone
     ){
         super(elmRef,render,zone)
-    }
+    }*/
 }

@@ -17,8 +17,11 @@ import {UserComponent} from "./detach/user.component";
 import {UsersDemoComponent} from "./detach/users-demo.component";
 import {OnDirtyDemoComponent} from "./on-dirty/on-dirty.component";
 import {UpDownComponent} from "./on-dirty/up-down.component";
+import {BaseComponent} from "./base.component";
+
 
 let demosComponent = [
+    BaseComponent,
     TickComponent
     ,HomeComponent
     ,CounterComponent

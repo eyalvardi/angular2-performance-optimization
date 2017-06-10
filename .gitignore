@@ -1,7 +1,7 @@
 # compiled output
-/dist
+/dist/**
 /tmp
-/aot
+/aot/**
 
 # dependencies
 /node_modules

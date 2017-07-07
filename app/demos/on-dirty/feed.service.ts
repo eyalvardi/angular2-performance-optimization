@@ -1,15 +1,16 @@
 import {Observable} from "rxjs/Observable";
 import {Observer}   from "rxjs/Observer";
+import {Subject} from "rxjs/Subject";
 
 export class FeedService{
     private worker:any;
-    private observer:Observer<number>;
+    //private observer:Observer<number>;
     private updateFn:any;
 
-    public source:Observable<number>;
+    public source:Subject<number> = new Subject();
 
     constructor(){
-        this.source = Observable.create((observer)=>{ this.observer = observer; }).share();
+        //this.source = Observable.create((observer)=>{ this.observer = observer; }).share();
         this.updateFn = this.update.bind(this);
     }
 
@@ -20,13 +21,13 @@ export class FeedService{
         this.worker.postMessage(true);
     }
     update(e){
-        this.observer.next(e.data);
+        this.source.next(e.data);
     }
     stop(){
         this.worker.postMessage(false);
         this.worker.removeEventListener(this.updateFn);
         this.worker.terminate();
-        this.observer.complete();
+        this.source.complete();
     }
 }
 

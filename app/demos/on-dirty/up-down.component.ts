@@ -54,6 +54,7 @@ export class UpDownComponent {
             .source
             .do(num => { this.val = num; })
             // number to UpDown
+            //.startWith({ curr:0 , isUp:false })
             .scan((acc:{curr:number,isUp:boolean},curr)=>{
                 return {
                     curr,

@@ -1,6 +1,6 @@
 import {Route} from "@angular/router";
 import {AccordionDemoComponent} from "./demos/accordion/demo.component";
-import {BoardDemoComponent}     from "./demos/board/board.demo.component";
+import {BoardDemoComponent}     from "./demos/counter/board.demo.component";
 import {BoardDemo2Component}    from "./demos/board/board2.demo.component";
 import {UsersDemoComponent}     from "./demos/detach/users-demo.component";
 import {HomeComponent}          from "./demos/home.component";
